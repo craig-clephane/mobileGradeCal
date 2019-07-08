@@ -12,7 +12,6 @@ body {
 	height: auto;
 	padding: 10px;
 	margin: 10px;
-	background-color: red;
 }
 .gradeElement input {
 	width: 100%;
@@ -26,4 +25,29 @@ body {
 	color: white;
 	font-weight: bold;
 	font-family: arial;
+}
+button {
+  background-color: #024;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#calculate_elements{
+
+}
+#add_new_element {
+
+}
+#gradevisual {
+	padding: 10px;
+}
+.gradeDisplay h1 {
+	font-size: 100px;
+	color: white;
 }
