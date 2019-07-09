@@ -23,7 +23,6 @@ function onStartUp() {
 
 
 function calculategrades() {
-
 	var sum = 0;
 	var gradeelements = [];
 	var weightelements = [];
@@ -59,6 +58,7 @@ function calculategrades() {
 	printGrade(sum);
 }
 
+//Print the grade to the user
 function printGrade(grade) {
 	var gradetitle = ""
 	if (grade < 40) {
@@ -67,19 +67,30 @@ function printGrade(grade) {
 	if (grade >= 40) {
 		gradetitle = "You passed";
 	}
-		if(grade >= 50) {
+	if(grade >= 50) {
 		gradetitle = "You've acheieved a 2:2";
 	}
-		if(grade >= 60){
+	if(grade >= 60){
 		gradetitle = "You've acheieved a 2:1";
 	}
-
 	if(grade >= 70) {
 		gradetitle = "You've achieved a 1st!";
 	}
-
-
-	
 	var gradeDisplay = '<div class = "gradeDisplay"><h2>'+gradetitle+'</h2><h1>'+grade+'%</h1></div>';
 	document.getElementById('gradeVisual').innerHTML = gradeDisplay;
+}
+
+function saveGrade() {
+	var idcounter = 1;
+	for(i = 0; i < LengthofForms; i++) {
+		var grade = document.getElementById("grade"+idcounter+"").value;
+		var weight = document.getElementById("weight"+idcounter+"").value;
+		localStorage.setItem("grade"+idcounter+"", grade);
+		localStorage.setItem("weight"+idcounter+"", weight);
+		idcounter++;
+	}
+}
+
+function clearGrade() {
+	localStorage.clear();
 }

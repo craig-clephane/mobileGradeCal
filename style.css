@@ -89,7 +89,15 @@ float: right;
 #add_new_element {
 display: inline-block;
 width: 50%;
-
+}
+#save_elements {
+display: inline-block;
+width: 50%;
+}
+#clear_elements {
+	display: inline-block;
+width: 50%;
+float: right;
 }
 .gradeDisplay {
 	text-align: center;
