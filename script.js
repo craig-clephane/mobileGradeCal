@@ -12,12 +12,40 @@ var node = '<div class = "gradeElement"><label for="input" class = "GradeHeader"
 var percentagenode = '<div class = "weightElement"><label for="input" class = "GradeHeader"></label><input type="text"  id="weight'+LengthofForms+'" name="grade" maxlength="2" size="3"><br></div>';
 document.getElementById('formGradeElements').innerHTML += node;
 document.getElementById('formWeightElements').innerHTML += percentagenode;
+//if(grade != undefined) appendElement(grade, weight);
 }
 
+function appendElement(grade, weight) {
+	LengthofForms++;
+	if(grade != undefined){
+	console.log(grade, weight);
+	console.log(LengthofForms);
+	console.log("grade"+LengthofForms+"");
+	console.log("weight"+LengthofForms+"");
+	document.getElementById("grade"+LengthofForms+"").value = grade;
+	document.getElementById("weight"+LengthofForms+"").value = weight;
+}
+}
 
 function onStartUp() {
-	for(i = 0; i < onStartUpLength; i++) {
-		addNewElement();
+	var counter = 1;
+
+	if ("numberofItems" in localStorage) {
+ 
+    var numberOfValues = localStorage.getItem('numberofItems');
+	} else {
+  
+	}
+
+	for(i = 0; i < numberOfValues; i++) {
+	addNewElement();
+	}
+	LengthofForms = 0;
+	for(i = 0; i < numberOfValues; i++) {
+	var localgrade = localStorage.getItem("grade"+counter+"");
+	var localweight = localStorage.getItem("weight"+counter+"");
+	appendElement(localgrade, localweight);
+	counter++;
 	}
 }
 
@@ -89,8 +117,10 @@ function saveGrade() {
 		localStorage.setItem("weight"+idcounter+"", weight);
 		idcounter++;
 	}
+	localStorage.setItem("numberofItems", LengthofForms);
 }
 
 function clearGrade() {
 	localStorage.clear();
+	location.reload(); 
 }

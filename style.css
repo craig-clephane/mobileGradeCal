@@ -81,6 +81,11 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+#remove_elements {
+display: inline-block;
+width: 50%;
+float: right;
+}
 #calculate_elements{
 display: inline-block;
 width: 50%;
@@ -90,15 +95,13 @@ float: right;
 display: inline-block;
 width: 50%;
 }
+
 #save_elements {
 display: inline-block;
 width: 50%;
 }
-#clear_elements {
-	display: inline-block;
-width: 50%;
-float: right;
-}
+
+
 .gradeDisplay {
 	text-align: center;
 }
