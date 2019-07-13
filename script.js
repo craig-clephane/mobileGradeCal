@@ -32,6 +32,7 @@ function appendElement(grade, weight) {
 function onStartUp(ModuleName) {
 	var counter = 1;
 	ModuleNameGlobal = ModuleName;
+	
 	if (ModuleName+"numberofItems" in localStorage) {
  	
     var numberOfValues = localStorage.getItem(ModuleName+'numberofItems');
@@ -136,8 +137,7 @@ function addNewModule() {
 	countOfModules++;
 	var modulename = document.getElementById("module_name").value;
 	console.log(modulename);
-	console.log(countOfModules);
-
+	console.log("Number of existing modules "+countOfModules);
 	var node = '<div class = "module" id="Module'+countOfModules+'" onClick=openModuleDetails("'+modulename+'")><div class="moduletitle"><p id = "ModuleP'+countOfModules+'">'+modulename+'</p></div><div class="modulePrecentage"><p>69%</p></div></div>';
 	document.getElementById('module_elements').innerHTML += node;
 	closepopup();
@@ -145,7 +145,6 @@ function addNewModule() {
 }
 
 function appendModule(modulename) {
-	countOfModules++;
 	var node = '<div class = "module" id="Module'+countOfModules+'" onClick=openModuleDetails("'+modulename+'")><div class="moduletitle"><p id = "ModuleP'+countOfModules+'">'+modulename+'</p></div><div class="modulePrecentage"><p>69%</p></div></div>';
 	document.getElementById('module_elements').innerHTML += node;
 }
@@ -154,9 +153,14 @@ function appendModule(modulename) {
 function saveModules() {
 	var idcounter = 1;
 	for(i = 0; i < countOfModules; i++) {
-		var ModName = document.getElementById("ModuleP"+idcounter+"").innerHTML;
-		console.log(ModName);
-		localStorage.setItem("Module"+idcounter+"",ModName);
+		if ("Module"+idcounter+"" in localStorage)
+		{
+			console.log("Module exists, did not save");
+		}else{
+			var ModName = document.getElementById("ModuleP"+idcounter+"").innerHTML;
+			console.log("Module saved" + ModName);
+			localStorage.setItem("Module"+idcounter+"",ModName);
+		}
 		idcounter++;
 	}
 	localStorage.setItem("ModuleCount",countOfModules);
@@ -201,6 +205,7 @@ function load() {
 	counterr++;
 	appendModule(Module_Name);
 	}
+	console.log("Number of Modules in local storage " + countOfModules);
 
 }
 
@@ -211,5 +216,17 @@ function backToModuleOverview() {
 	document.getElementById('add_new_element_grade').style.display = 'none';
 	document.getElementById('header-right').style.display = 'block';
 	document.getElementById('back_button').style.display = 'none';
-	
+	emptyModules();
+}
+
+function emptyModules() {
+	LengthofForms = 0;
+   var elements = document.getElementsByClassName('weightElement');
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+    elements = document.getElementsByClassName('gradeElement');
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
 }
