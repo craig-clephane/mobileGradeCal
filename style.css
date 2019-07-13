@@ -1,3 +1,4 @@
+
 #outer_conatiner {
 }
 #top_element h1 {
@@ -10,7 +11,6 @@ body {
 }
 
 .gradeElement {
-	
 	padding: 10px;
 }
 
@@ -21,7 +21,7 @@ body {
 	box-sizing: border-box;
 	border: none;
 	border-bottom: 1px solid white;
-	background-color: #024;
+	background-color: #024;   
 	color: white;
 	font-size: 20px;
 	text-align: center;
@@ -58,7 +58,7 @@ float: right;
 	border-bottom: 1px solid white;
 	background-color: #024;
 	color: white;
-		font-size: 20px;
+	font-size: 20px;
 	text-align: center;
 }
 .ModuleSection {
@@ -136,7 +136,9 @@ width: 50%;
   border: 1px solid #888;
   width: 80%;
 }
-
+.modal-content button {
+	width: 100% !important;
+}
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -150,4 +152,75 @@ width: 50%;
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+#module_name {
+	width: 100%;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 20px;
+	border: none;
+	font-size: 30px;
+	text-align: center;
+}
+.popup_close_box {
+	position: absolute;
+	z-index: 1;
+	width: 80%;
+}
+
+#module_elements {
+width: 100%;
+display: inline-block;
+background-color: white;
+}
+
+.module {
+	height: 20%; 
+	margin: 5px;
+}
+
+.moduletitle {
+	color: black;
+	width: 50%;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.modulePrecentage {
+	color: black;
+	width: 50%;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.module_name_container {
+	width: 100%;
+	position: relative;
+}
+
+#below_container {
+	display: none;
+}
+
+#module_options {
+	display: none;
+}
+
+@media only screen and (max-width: 550px) {
+	.gradeElement input {
+		font-size: 2.5em;
+	}
+	button {
+		font-size: 2.5em;
+	}
+	#module_name {
+		font-size: 2.5em;
+	}
+	.modulePrecentage {
+		font-size: 2.5em;
+	}
+	.moduletitle {
+		font-size: 2.5em;
+	}
 }
