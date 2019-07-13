@@ -13,6 +13,7 @@ var node = '<div class = "gradeElement"><label for="input" class = "GradeHeader"
 var percentagenode = '<div class = "weightElement"><label for="input" class = "GradeHeader"></label><input type="text"  id="weight'+LengthofForms+'" name="grade" maxlength="2" size="3"><br></div>';
 document.getElementById('formGradeElements').innerHTML += node;
 document.getElementById('formWeightElements').innerHTML += percentagenode;
+
 //if(grade != undefined) appendElement(grade, weight);
 }
 
@@ -140,7 +141,7 @@ function addNewModule() {
 	var node = '<div class = "module" id="Module'+countOfModules+'" onClick=openModuleDetails("'+modulename+'")><div class="moduletitle"><p id = "ModuleP'+countOfModules+'">'+modulename+'</p></div><div class="modulePrecentage"><p>69%</p></div></div>';
 	document.getElementById('module_elements').innerHTML += node;
 	closepopup();
-
+	saveModules();
 }
 
 function appendModule(modulename) {
@@ -180,6 +181,9 @@ function display_module() {
 	document.getElementById('below_container').style.display = 'block';
 	document.getElementById('module_options').style.display = 'block';
 	document.getElementById('overview_module').style.display = 'none';
+	document.getElementById('add_new_element_grade').style.display = 'block';
+	document.getElementById('header-right').style.display = 'none';
+	document.getElementById('back_button').style.display = 'block';
 }
 
 function load() {
@@ -204,4 +208,8 @@ function backToModuleOverview() {
 	document.getElementById('below_container').style.display = 'none';
 	document.getElementById('module_options').style.display = 'none';
 	document.getElementById('overview_module').style.display = 'block';
+	document.getElementById('add_new_element_grade').style.display = 'none';
+	document.getElementById('header-right').style.display = 'block';
+	document.getElementById('back_button').style.display = 'none';
+	
 }
