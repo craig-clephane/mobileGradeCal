@@ -1,17 +1,30 @@
-</!DOCTYPE html>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Grade Cal</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="script.js"></script>
 </head>
-<body onload="onStartUp()">
+<body onload="load()">
 <section id="outter_conatiner">
 	<section id="inner_container">
-		<div id ="top_element"><h1>University Grade Calculator</h1></div>
-		<div id="formGradeElements"><h1>Grade</h1></div>
-		<div id="formWeightElements"><h1>Weight % </h1></div>
+					<div id="overview_module">
+						<div id="module_elements"></div>
+						<button id ="add_new_element" onclick = "openpopup()">Add new</button>
+						<button id ="add_new_element" onclick = "saveModules()">Save</button>
+					</div>	
+
+					<div id="module_options">
+						<div id ="back_button" onclick="backToModuleOverview()"><h1>back</h1></div>
+						<div id ="top_element"><h1>University Grade Calculator</h1></div>
+						<div id="formGradeElements"><h1>Grade</h1></div>
+						<div id="formWeightElements"><h1>Weight % </h1></div>
+					</div>											
 	</section>
+
+
 	<section id="below_container">
 		<button id ="add_new_element" onclick = "addNewElement()">Add new</button>
 		<button id ="calculate_elements" onclick="calculategrades()">Calculate Grades</button>
@@ -19,18 +32,22 @@
 		<button id = "remove_elements" onclick = "clearGrade()">Clear</button>
 	</section>
 	<section id="gradeVisual"></section>
-	<!-- The Modal -->
-<div id="myModal" class="modal">
+	<div id="myModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-    <button id ="add_new_element" onclick = "addNewElement()">Add new</button>
+  	<div class="popup_close_box"> 
+  		<span class="close" onclick="closepopup()">&times;</span>
+  	</div>
+ 
+    <div id="module_name_container">
+    	<input type="text" id="module_name" size="20"placeholder="Name of Module" name="module_name"><br>
+    </div>
+    
+    <button id ="add_new_element" onclick = "addNewModule()">Add new</button>
   </div>
 
 </div>
-
 </section>
 </body>
 </html>
