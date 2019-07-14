@@ -12,7 +12,7 @@
 	<div class="header">
 	  <a href="#default" class="title">University Grade Calculator</a>
 	  <div id="header-right">
-	    <a class="active" onclick="openpopup()">Add New</a>
+	    <a class="active" onclick="openpopup()">+</a>
 	  </div>
 	  <div id ="back_button" style="display: none; float: right;" onclick="backToModuleOverview()"><a>back</a></div>
 	</div>
@@ -32,8 +32,7 @@
 
 
 	<section id="below_container">
-		<button id ="calculate_elements" onclick="calculategrades()">Calculate Grades</button>
-		<button id ="save_elements" onclick = "saveGrade()">Save</button>
+		
 		
 	</section>
 	<section id="gradeVisual"></section>
@@ -56,7 +55,12 @@
 </section>
 </body>
 <div id="module_footer_elements">
-		<button id ="add_new_element_grade" onclick = "addNewElement()">Add new</button>
-		<button id = "remove_elements" onclick = "clearGrade()">Clear</button>			
+		<button id = "remove_elements" onclick = "clearContent()">D</button>
+		<div id="selected_module_elements">
+			<button id ="save_elements" onclick = "saveGrade()">S</button>
+			<button id ="add_new_element_grade" onclick = "addNewElement()">+</button>
+			<button id ="calculate_elements" onclick="calculategrades()">=</button>		
+		</div>
+		
 </div>
 </html>
