@@ -21,18 +21,19 @@ body {
 	margin: 8px 0;
 	box-sizing: border-box;
 	border: none;
-	border-bottom: 1px solid white;
-	    background: none;  
-	color: white;
+	border-bottom: 1px solid black;
+	background: none;  
+	color: black;
 	font-size: 20px;
 	text-align: center;
 }
 #formGradeElements {
 width: 50%;
 display: inline-block;
+margin-bottom: 15%;
 }
 #formGradeElements h1 {
-color: white;
+	color: black;
 	padding: 10px;
 	text-align: center;
 }
@@ -40,9 +41,10 @@ color: white;
 width: 50%;
 display: inline-block;
 float: right;
+margin-bottom: 15%;
 }
 #formWeightElements h1 {
-	color: white;
+	color: black;
 	padding: 10px;
 	text-align: center;
 }
@@ -56,9 +58,9 @@ float: right;
 	margin: 8px 0;
 	box-sizing: border-box;
 	border: none;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid black;
 	background: none;
-	color: white;
+	color: black;
 	font-size: 20px;
 	text-align: center;
 }
@@ -83,27 +85,51 @@ button {
   cursor: pointer;
 }
 #remove_elements {
-display: inline-block;
-width: 100%;
-float: right;
+	display: inline-block;
+	width: 100%;
+    float: right;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 10px;
 }
 #calculate_elements{
-display: inline-block;
-width: 50%;
-float: right;
+	display: none;
+    width: 100%;
+    float: right;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 10px;
 }
 #add_new_element {
 display: inline-block;
 }
 
 #save_elements {
-display: inline-block;
-width: 50%;
+	display: none;
+    width: 100%;
+    float: right;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 10px;
 }
-
+#selected_module_elements {
+	width: 100%;
+}
 #add_new_element_grade {
 	display: none;
     width: 100%;
+    float: right;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 10px;
 }
 .gradeDisplay {
 	text-align: center;
@@ -225,7 +251,7 @@ position: fixed;
 .header {
   overflow: hidden;
   background-color: #024;
-  padding: 20px 10px;
+  padding: 10px 10px;
 }
 
 .header a {
@@ -253,6 +279,8 @@ position: fixed;
 .header a.active {
   background-color: dodgerblue;
   color: white;
+    border-radius: 50%;
+    width: 25px;
 }
 
 #header-right {
